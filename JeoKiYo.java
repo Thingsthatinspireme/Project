@@ -1,5 +1,7 @@
 package ex01.program.Jeokiyo;
 
+import java.util.Arrays;
+
 public class JeoKiYo {
 
 	public static void main(String[] args) throws Throwable {
@@ -36,18 +38,23 @@ public class JeoKiYo {
 //		System.out.println();
 //		Thread.sleep(time);
 		
-		Controller jeo = new Controller();
-		jeo.mainRun();
+//		Controller jeo = new Controller();
+//		jeo.totalRun();
+		
+		Controller c = new Controller();
+		c.restName("일식");
+		
+//		String i = jeo.categoryRun();
+//		jeo.restInfoRun(i);
 		
 		DAO dao = new DAO();
 		
-		dao.conn();
-		dao.korFood();
-		VO vo = dao.korFood();
-		System.out.println(vo.getRestName());
+//		dao.conn();
+//		dao.korFood();
+//		VO vo = dao.korFood();
+//		System.out.println(vo.getRestName());
 		
-		vo.setRestName("식당");
-		System.out.println(vo.getRestName());
+
 	}
 
 }

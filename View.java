@@ -10,10 +10,7 @@ public class View {
 		return sc;
 	}
 
-	public static int getSetMenu() {
-		System.out.println("번호 선택 >> ");
-		return sc.nextInt();
-	}
+	
 
 	public static void open() {
 	
@@ -115,15 +112,22 @@ public class View {
 //	
 
 	
-	public static void korFood() {
-		VO vo = new VO();
+	public static void restaurantInfo(String RestName, String Category, int choice ) {
+		String emo = null;
+		switch (choice) {
+		case 1 : emo = "🍚"; break;
+		case 2 : emo = "🍲"; break;
+		case 3 : emo = "🍣"; break;
+		case 4 : emo = "🍗";	 break;
+		}
+				
 		System.out.println("▓█▓█▓█▓█▓█▓█▓█▓█   저  기  요    ▓█▓█▓█▓█▓█▓█▓█▓█");
 		System.out.println("|------------------------------------------|");
-		System.out.println("|\t\t" + vo.getCategory()  + "\t\t|");
+		System.out.println("|\t\t       " + Category + emo +"\t\t   |");
 		System.out.println("|------------------------------------------|");
 		System.out.println("| 0. 식당 별점 순으로 보기                                              |");
 		System.out.println("|------------------------------------------|");
-		System.out.println("| 1. 김가네                                                                   |");
+		System.out.println("| 1. " + RestName +"\t\t\t|" );
 		System.out.println("| 2. 조마루 감자탕                                                         |");
 		System.out.println("| 3. 혜화동 왕돈까스                                                      |");
 		System.out.println("| 4. 엽기떡볶이                                                             |");
@@ -191,19 +195,19 @@ public class View {
 //		System.out.println("▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█");
 //	}
 	
-	public static void restaurantInfo() {
+	public static void restaurantMenu(String RestName, String Address, String Menu, Long Phone, int MiniPrice, int UnitPrice) {
 		
 		System.out.println("▓█▓█▓█▓█▓█▓█▓█▓█   저  기  요    ▓█▓█▓█▓█▓█▓█▓█▓█");
 		System.out.println("|------------------------------------------|");
-		System.out.println("|                 김   가   네                                   |");
+		System.out.println("|\t\t       " + RestName +"\t\t     |");
 		System.out.println("|------------------------------------------|");
-		System.out.println("| 최소 주문 금액 : 12,000원                                          |");
-		System.out.println("| 배달시간 : 40 ~ 54분 소요 예상                                  |");
-		System.out.println("| 배달팁 : 1000 ~ 2000 원                                         |");
+		System.out.println("| 최소 주문금액 : "+ MiniPrice );
+		System.out.println("| 주소 : "+ Address );
+		System.out.println("| 전화번호 : "+ Phone );
 		System.out.println("|------------------------------------------|");
 		System.out.println("|                📜   메뉴  📜                                          |");
 		System.out.println("|                                          |");
-		System.out.println("| 1. 참치김밥                                                  3000 원 |");
+		System.out.println("| 1. " + Menu + "\t\t\t" + UnitPrice + "원|");
 		System.out.println("| 2. 직화 제육 볶음                                          7500 원 |");
 		System.out.println("| 3. 돈까스                                                     7000 원 |");
 		System.out.println("| 4. 잔치국수                                                  6000 원 |");
