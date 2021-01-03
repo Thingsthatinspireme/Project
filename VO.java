@@ -1,38 +1,34 @@
-package ex01.program.Jeokiyo;
+package practice.manito.ex01;
 
 public class VO {
-	String RestName;
-	String Category;
-	int Grade;		
-	int MiniPrice;
+	private int manittoNum;
+	String keyword1;
+	String keyword2;
+	String keyword3;
 	
-
-	public void setRestName(String RestName) {
-		this.RestName = RestName;
+	public int getManittoNum() {
+		return manittoNum;
 	}
-	
-	public String getRestName() {
-		return RestName;
+	public void setManittoNum(int manittoNum) {
+		this.manittoNum = manittoNum;
 	}
-	
-	public String getCategory() {
-		return Category;
+	public String getKeyword1() {
+		return keyword1;
 	}
-	public void setCategory(String Category) {
-		this.Category = Category;
+	public void setKeyword1(String keyword1) {
+		this.keyword1 = keyword1;
 	}
-	public int getGrade() {
-		return Grade;
+	public String getKeyword2() {
+		return keyword2;
 	}
-	public void setGrade(int Grade) {
-		this.Grade = Grade;
+	public void setKeyword2(String keyword2) {
+		this.keyword2 = keyword2;
 	}
-	public int getMiniPrice() {
-		return MiniPrice;
+	public String getKeyword3() {
+		return keyword3;
 	}
-	public void setMiniPrice(int MiniPrice) {
-		this.MiniPrice = MiniPrice;
+	public void setKeyword3(String keyword3) {
+		this.keyword3 = keyword3;
 	}
 	
-
 }
