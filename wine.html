@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+        body {
+            font-family: 'Staatliches', cursive;
+            /* background-color: #101010; */
+            background-color: rgb(3, 3, 3)
+        }
+
+        #section {
+            max-width: 1200px;
+            min-width: 756px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        #product1{
+            position: relative;
+        }
+
+        #product1 img {
+            position: absolute;
+            width: 50%;
+            display: none;
+        }
+
+        #product1 P {
+            position: absolute;
+            color: whitesmoke;
+            width: 40vw;
+        }
+
+        #product1 #name {
+            /* 배경에 색을 입혀서 그라데이션주는방식 */
+            background: linear-gradient(40deg,#850000,#2b0000);
+            /* 글씨체를 투명으로 바꾸기 */
+            -webkit-text-fill-color: transparent;
+            /* txet오려내기 */
+            -webkit-background-clip: text;
+            position: absolute;
+            font-size: 7vw;
+            width: 50%;
+            margin-left:80%;
+            margin-top: 32vw;
+            opacity: 0;
+        }
+        #product1 #since {
+            position: absolute;
+            color: whitesmoke;
+            font-size: 2vw;
+            margin-top: 35vw;
+            margin-left: 80%;
+            opacity: 0;
+        }
+
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#product1 img').fadeIn( 2000 );
+            $('#product1 #name').animate({"margin-left": "65%", "opacity" : 1}, 3000);
+            $('#product1 #since').animate({"opacity" : 0.5}, 3000);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header">
+
+    </div>
+    <div id="nav"></div>
+    <div id="section">
+        <article id="product1">
+            <img src="../images/GlassOfWine4.gif" id="img">
+            <p id="name">De Taula</p>
+            <p id="since">since 1880</p>
+        </article>
+    </div>
+    <div id="footer">
+
+    </div>
+</body>
+
+</html>
