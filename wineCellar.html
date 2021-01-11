@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Cellar</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+
+        body {
+            background-image: url(../images/wineGlass.png);
+            background-repeat: no-repeat;
+            background-blend-mode: soft-light;
+            background-size: 200px;
+            background-position: 95% 95%;
+            background-attachment: fixed;
+            background-color: #641e4e;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #header {
+            width: 80%;
+            height: 500px;
+            margin-left: 10%;
+        }
+
+        #section {
+            width: 100%;
+            height: 100%;
+        }
+
+        .article1 {
+            min-width: 786px;
+            height: 500px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            position: relative;
+            font-family: 'Playfair Display';
+        }
+
+
+        video {
+            width: 100%;
+        }
+
+        .jb-text {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+        }
+
+        .jb-text p {
+            margin-top: -24px;
+            text-align: center;
+            font-size: 60px;
+            color: #ffffff;
+        }
+
+        .article2 {
+            width: 1200px;
+            min-width: 600px;
+        }
+
+        #cellar1,
+        #cellar2,
+        #cellar3,
+        #cellar4,
+        #cellar5 {
+
+            width: 60%;
+            min-height: 340px;
+            margin-top: 0%;
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-bottom: 10px;
+            padding-top: 20px;
+            padding-bottom: 25%;
+            box-sizing: border-box;
+            position: relative;
+            max-width: 100%;
+
+        }
+
+        .article2 img {
+            position: absolute;
+            width: 50%;
+            min-width: 300px;
+            height: auto;
+            float: left;
+            padding: 0%;
+            opacity: 0;
+            box-shadow: 3px 3px 20px rgb(32, 5, 21);
+        }
+
+        #text {
+            position: absolute;
+            float: right;
+            width: 50%;
+            min-width: 300px;
+            margin-top: 2%;
+            margin-left: 55%;
+            color: whitesmoke;
+        }
+
+        #text h3 {
+            opacity: 0;
+            font-family: 'Playfair Display';
+            font-size: 30px;
+        }
+
+        #text p {
+            opacity: 0;
+            line-height: 180%;
+        }
+
+        #footer {
+            width: 60%;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        #btn {
+            background: url("../images/GoTop.png") no-repeat;
+            background-size: 30px;
+            margin-left: 50%;
+            margin-left: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            border: 0;
+            outline: 0;
+            
+
+        }
+
+        #btn:hover {
+            background: url("../images/GoTop2.png") no-repeat;
+            background-size: 30px;
+        }
+
+
+        #footerImg {
+            position: fixed;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(window).scroll(function () {
+                var arr = ["#cellar1 img", "#cellar1 h3", "#cellar1 p", "#cellar2 img", "#cellar2 h3", "#cellar2 p", "#cellar3 img", "#cellar3 h3", "#cellar3 p"
+                    , "#cellar4 img", "#cellar4 h3", "#cellar4 p", "#cellar5 img", "#cellar5 h3", "#cellar5 p"];
+                for (var i = 0; i < arr.length; i++) {
+
+                    $(arr[i]).each(function (i) {
+
+                        var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+                        var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+                        if (bottom_of_window > bottom_of_element) {
+                            $(this).animate({ 'opacity': '1', 'margin-top': '0%' }, 1500);
+                        }
+
+                    });
+
+                }
+            });
+
+            $("#btn").click(function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            })
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <div id="content">
+        <div id="header">
+            <p>헤더 상단에 메뉴들어갈 부분</p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+
+        <div id="section">
+            <!-- 비디오 들어갈 부분 -->
+            <div class="article1" id="video">
+                <video muted autoplay loop>
+                    <source src="../images/cellarvideo.mp4" type="video/mp4">
+                </video>
+                <div class="jb-text">
+                    <p>Lorem Ipsum Dolor</p>
+                </div>
+            </div>
+            <!-- 사진하고 와인셀러 설명 들어갈 부분 -->
+            <div class="article2" id="cellar1">
+                <img src="../images/harvest-grape.jpg">
+                <div id="text">
+
+                    <h3>How sweet you are!</h3>
+                    <p>와인에 적정한 알콜 도수를 얻기 위한 포도의 당도는 22~25brix 입니다.
+                        저희 농장에서는 당도 검사를 철저히 수행하고 있으며,
+                        당도가 22brix에 미치지 않는 포도로는 와인을 만들지 않습니다.</p>
+                </div>
+            </div>
+            <div class="article2" id="cellar2">
+                <img src="../images/cellar1.jpg">
+                <div id="text">
+                    <h3>Careful, Wonderful</h3>
+                    <p>알콜은 발효 온도에 따라 맛에 영향을 미치는 민감한 액체입니다.
+                        와인은 온도의 급격한 변화를 싫어하는 탓에,
+                        한여름에도 겨울에도 온도 유지에 특히나 신경을 쓰고 있습니다.
+                        고급와인일수록 저온에서 숙성되며,
+                        가장 맛있는 와인이 발효 되기 위해서 적정한 온도는 25℃입니다.</p>
+                </div>
+            </div>
+            <div class="article2" id="cellar3">
+                <img src="../images/woodCellar.jpg">
+                <div id="text">
+                    <h3>Perfect Humidity For Perfect Wine</h3>
+                    <p>와인은 햇빛에 노출 되는 것이 좋지 않기 때문에 어두운 곳에서 실내습도 약 60~70%를 유지하며 숙성해야합니다.
+                        이러한 까다로운 조건을 유지하여 약 40일간 2번의 발효과정을 거치면 와인이 완성됩니다.</p>
+                </div>
+            </div>
+            <div class="article2" id="cellar4">
+                <img src="../images/DecantingWine.jpg">
+                <div id="text">
+                    <h3>Special Wine Made By Specialists</h3>
+                    <p>숙성이 끝난 와인은 불순물이 없는지
+                        다년간의 경력을 가진 와인 스페셜리스트들이 직접 수작업으로 초에 비추어 상태를 점검합니다.</p>
+                </div>
+            </div>
+            <div class="article2" id="cellar5">
+                <img src="../images/cellar3.jpg">
+                <div id="text">
+                    <h3>Worth The Wait</h3>
+                    <p>와인은 보통 1년정도 숙성되면 맛이 들지만
+                        더 깊은 맛을 얻고 싶으시다면 장기 숙성을 하는 것도 좋은 방법입니다.
+                        더 큰 즐거움을 위해 조금 아껴두었다가 즐겨보시는 것은 어떨까요?
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <input type="button" id="btn">
+        </div>
+    </div>
+</body>
+
+</html>
